@@ -1,0 +1,30 @@
+{
+    "manifest_version": 2,
+    "name": "导出收藏",
+    "version": "1.0",
+    "description": "导出今日头条收藏列表",
+    "icons": {
+        "16": "images/icon16.png",
+        "48": "images/icon48.png",
+        "128": "images/icon128.png"
+    },
+    "permissions": [
+        "tabs", "http://*/*", "https://*/","activeTab"
+    ],
+    "browser_action": {
+        "default_icon": {
+            "19": "images/icon19.png",
+            "38": "images/icon38.png"
+        },
+        "default_title": "导出收藏",
+        "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": [ "https://www.toutiao.com/c/user/*/","*://www.csdn.net/*" ],
+            "js": ["js/jquery.min.js"],
+            "run_at": "document_end"
+        }
+    ]
+    
+}
